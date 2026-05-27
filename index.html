@@ -263,10 +263,9 @@ h1{font-size:13px;color:#404060;margin-bottom:16px;letter-spacing:0.05em;text-tr
         <div class="flbl">Inicio de carga</div>
         <div class="fbox"><span>09:07 — confirmado</span><i class="ti ti-circle-check" style="color:#2a6040;"></i></div>
         <div class="flbl">Precintos <span style="color:#cc4040;">*</span></div>
+        <div style="font-size:10px;color:#383858;margin-bottom:6px;">Ingresa el código de cada precinto recibido físicamente.</div>
         <div class="tags-r" id="prec-tags">
-          <div class="tag">P-001 <i class="ti ti-x"></i></div>
-          <div class="tag">P-002 <i class="ti ti-x"></i></div>
-          <div class="add-t" onclick="addP(this)"><i class="ti ti-plus"></i> agregar</div>
+          <div class="add-t" onclick="addP(this)"><i class="ti ti-plus"></i> agregar precinto</div>
         </div>
         <div class="flbl">Foto camión sellado <span style="color:#cc4040;">*</span></div>
         <div class="ph-box filled"><i class="ti ti-photo-check"></i><span>foto_cierre_kdr482.jpg</span></div>
@@ -289,7 +288,7 @@ h1{font-size:13px;color:#404060;margin-bottom:16px;letter-spacing:0.05em;text-tr
       <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Inspección del vehículo</div><div class="ss dn">06:28 · 6 ítems OK</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
       <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Inspección de cargue</div><div class="ss dn">07:15 · BASC</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
       <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Recogida de documentos</div><div class="ss dn">08:55</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
-      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Registro de carga</div><div class="ss dn">09:07–09:35 · P-001, P-002</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Registro de carga</div><div class="ss dn">09:07–09:35 · precintos registrados</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
       <div class="sr" style="border-bottom:none;"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div></div><div class="sb"><div class="sn">Autorización de salida</div><div class="ss dn">09:37 · guardia</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
       <div style="flex:1;"></div>
       <div class="cta-z"><button class="btn b-green" onclick="go('p-c8')"><i class="ti ti-map-pin"></i> Iniciar ruta</button></div>
@@ -355,8 +354,8 @@ h1{font-size:13px;color:#404060;margin-bottom:16px;letter-spacing:0.05em;text-tr
     <div class="sbar"><span class="sbar-t">09:36</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
     <div class="topbar"><div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#20c0a0;letter-spacing:0.04em;">KDR-482</div><div class="tb-sub">Cargue completado · listo para gate-out</div></div><span class="role-tag rt-guard">Guardia</span></div>
     <div class="sbody">
-      <div class="sync-pill"><i class="ti ti-checks"></i><span>Conductor completó el cargue a las 09:35 · Precintos: P-001, P-002</span></div>
-      <div class="ccard"><div class="ccr"><span class="ccl">Gate-in</span><span class="ccv" style="color:#2a9060;">06:08 ✓</span></div><div class="ccr"><span class="ccl">Inspección</span><span class="ccv" style="color:#2a9060;">06:28 ✓</span></div><div class="ccr"><span class="ccl">Fin de carga</span><span class="ccv" style="color:#2a9060;">09:35 ✓</span></div><div class="ccr"><span class="ccl">Precintos</span><span class="ccv">P-001, P-002</span></div><div class="ccr"><span class="ccl">Temperatura</span><span class="ccv">4.5 °C</span></div></div>
+      <div class="sync-pill"><i class="ti ti-checks"></i><span>Conductor completó el cargue a las 09:35 · Precintos registrados</span></div>
+      <div class="ccard"><div class="ccr"><span class="ccl">Gate-in</span><span class="ccv" style="color:#2a9060;">06:08 ✓</span></div><div class="ccr"><span class="ccl">Inspección</span><span class="ccv" style="color:#2a9060;">06:28 ✓</span></div><div class="ccr"><span class="ccl">Fin de carga</span><span class="ccv" style="color:#2a9060;">09:35 ✓</span></div><div class="ccr"><span class="ccl">Precintos</span><span class="ccv" style="color:#2a9060;">Registrados ✓</span></div><div class="ccr"><span class="ccl">Temperatura</span><span class="ccv">4.5 °C</span></div></div>
       <div class="flbl" style="padding:0 16px 5px;">Foto puerta precintada <span style="color:#cc4040;">*</span></div>
       <div class="ph-box filled" style="margin:0 16px 10px;"><i class="ti ti-photo-check"></i><span>foto_gate_out_kdr482.jpg</span></div>
       <div style="flex:1;"></div>
@@ -396,10 +395,25 @@ function tc(box,listId,btnId){
   else{btn.disabled=true;btn.classList.add('b-dis');btn.classList.remove('b-green');}
 }
 function addP(el){
-  var n=document.querySelectorAll('#prec-tags .tag').length+1;
-  var t=document.createElement('div');t.className='tag';
-  t.innerHTML='P-00'+n+' <i class="ti ti-x"></i>';
-  el.parentElement.insertBefore(t,el);
+  var container=el.parentElement;
+  var inp=document.createElement('input');
+  inp.type='text';
+  inp.placeholder='Código precinto...';
+  inp.style.cssText='background:#1a1a2e;border:1.5px solid #5050c0;border-radius:20px;font-size:11px;font-weight:600;color:#c0c0f0;padding:4px 10px;outline:none;width:150px;';
+  inp.onkeydown=function(e){
+    if(e.key==='Enter'&&inp.value.trim()!==''){
+      var t=document.createElement('div');t.className='tag';
+      var code=inp.value.trim();
+      t.innerHTML=code+' <i class="ti ti-x" style="cursor:pointer;" onclick="this.parentElement.remove()"></i>';
+      container.insertBefore(t,el);
+      inp.value='';
+      inp.focus();
+    }
+    if(e.key==='Escape'){inp.remove();}
+  };
+  inp.onblur=function(){setTimeout(function(){if(inp.value.trim()==='')inp.remove();},150);};
+  container.insertBefore(inp,el);
+  inp.focus();
 }
 </script>
 </body>
