@@ -7,38 +7,56 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',system-ui,sans-serif;background:#0a0a10;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px 16px 40px;}
-h1{font-size:13px;color:#404060;margin-bottom:16px;letter-spacing:0.05em;text-transform:uppercase;}
-.device{width:340px;background:#0D0D13;border-radius:36px;border:2px solid #23232f;overflow:hidden;}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#08080f;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px 16px 40px;}
+.top-label{font-size:11px;color:#303048;margin-bottom:14px;letter-spacing:0.06em;text-transform:uppercase;}
+.device{width:340px;background:#0D0D13;border-radius:36px;border:2px solid #1e1e2a;overflow:hidden;box-shadow:0 0 60px #00000080;}
 .notch{width:80px;height:10px;background:#17171f;border-radius:0 0 12px 12px;margin:0 auto;}
 .screen{min-height:600px;display:flex;flex-direction:column;}
+
+/* status bar */
 .sbar{display:flex;justify-content:space-between;align-items:center;padding:6px 18px 2px;}
 .sbar-t{font-size:11px;font-weight:600;color:#d0d0e8;}
 .sbar-r{display:flex;gap:5px;align-items:center;}
 .sbar-r i{font-size:12px;color:#555570;}
+
+/* topbar */
 .topbar{display:flex;align-items:center;padding:4px 16px 10px;gap:10px;}
-.tb-back{width:28px;height:28px;border-radius:50%;background:#1c1c28;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.tb-back{width:28px;height:28px;border-radius:50%;background:#1c1c28;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
 .tb-back i{font-size:13px;color:#8080a8;}
 .tb-main{flex:1;}
 .tb-title{font-size:13px;font-weight:600;color:#ddddf2;}
 .tb-sub{font-size:10px;color:#44445a;margin-top:1px;}
+
+/* pills */
 .pill{font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap;}
 .p-blue{background:#1e1e40;color:#7070d0;}
 .p-amber{background:#2a1e08;color:#c08030;}
 .p-green{background:#0c2018;color:#30a060;}
 .p-gray{background:#1a1a24;color:#505068;}
 .p-teal{background:#0a1e1c;color:#209070;}
+.p-red{background:#200a0a;color:#a04040;}
+
+/* role tags */
+.role-tag{font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:0.05em;}
+.rt-guard{background:#0a1e1c;color:#20a080;}
+.rt-driver{background:#1a1838;color:#7060e0;}
+
+/* body */
 .sbody{flex:1;display:flex;flex-direction:column;padding-bottom:8px;}
+
+/* buttons */
 .cta-z{padding:8px 16px 12px;}
-.btn{width:100%;border:none;border-radius:14px;padding:14px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn{width:100%;border:none;border-radius:14px;padding:14px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity 0.15s;}
 .btn:active{opacity:0.8;}
 .b-purple{background:#5040c0;color:#fff;}
 .b-amber{background:#7a4010;color:#f0b060;}
 .b-green{background:#0d3a22;color:#40d880;}
 .b-teal{background:#0a3028;color:#30c890;}
+.b-red{background:#3a0a0a;color:#e06060;}
 .b-dis{background:#181820;color:#303045;cursor:default;}
-.b-sec{width:100%;border:1px solid #222230;border-radius:14px;padding:11px;font-size:12px;font-weight:500;cursor:pointer;background:transparent;color:#505070;margin-top:8px;}
-.div-line{height:1px;background:#131320;margin:0 16px;}
+.b-sec{width:100%;border:1px solid #1e1e2e;border-radius:14px;padding:11px;font-size:12px;font-weight:500;cursor:pointer;background:transparent;color:#505070;margin-top:8px;}
+
+/* cards */
 .vfc{margin:0 16px 12px;background:#14142a;border:1.5px solid #303080;border-radius:16px;padding:14px;}
 .vfn{font-size:16px;font-weight:700;color:#9090f8;letter-spacing:0.06em;font-family:'Courier New',monospace;margin-bottom:8px;}
 .vfr{display:flex;align-items:center;gap:6px;margin-bottom:10px;}
@@ -49,16 +67,33 @@ h1{font-size:13px;color:#404060;margin-bottom:16px;letter-spacing:0.05em;text-tr
 .vfmi{display:flex;flex-direction:column;gap:2px;}
 .vfml{font-size:9px;color:#383858;text-transform:uppercase;letter-spacing:0.06em;}
 .vfmv{font-size:11px;font-weight:600;color:#8080c0;}
+
 .greet{margin:4px 16px 12px;background:#111120;border:1px solid #1e1e30;border-radius:12px;padding:12px 14px;}
 .g-hi{font-size:11px;color:#404060;margin-bottom:2px;}
 .g-name{font-size:14px;font-weight:600;color:#d8d8f0;}
 .g-inf{font-size:10px;color:#383855;margin-top:2px;}
+
+.ccard{margin:0 16px 10px;background:#111120;border:1px solid #1e1e30;border-radius:12px;padding:12px 14px;}
+.ccr{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.ccr:last-child{margin-bottom:0;}
+.ccl{font-size:10px;color:#383858;}
+.ccv{font-size:11px;font-weight:600;color:#a0a0d0;}
+
+/* banners */
 .info-b{margin:0 16px 10px;background:#111120;border:1px solid #1e1e30;border-radius:10px;padding:9px 12px;display:flex;gap:8px;align-items:flex-start;}
 .info-b i{font-size:14px;color:#404070;flex-shrink:0;margin-top:1px;}
 .info-b span{font-size:10px;color:#404060;line-height:1.5;}
 .warn-b{margin:0 16px 10px;background:#1a1208;border:1px solid #3a2808;border-radius:10px;padding:9px 12px;display:flex;gap:8px;align-items:flex-start;}
 .warn-b i{font-size:14px;color:#a07020;flex-shrink:0;margin-top:1px;}
 .warn-b span{font-size:10px;color:#907040;line-height:1.5;}
+.sync-pill{margin:0 16px 8px;background:#0a1e1c;border:1px solid #1a3830;border-radius:8px;padding:7px 10px;display:flex;align-items:center;gap:7px;}
+.sync-pill i{font-size:13px;color:#20a070;flex-shrink:0;}
+.sync-pill span{font-size:10px;color:#207050;line-height:1.4;}
+.alert-pill{margin:0 16px 8px;background:#1a0e0a;border:1px solid #3a2010;border-radius:8px;padding:7px 10px;display:flex;align-items:center;gap:7px;}
+.alert-pill i{font-size:13px;color:#c06030;flex-shrink:0;}
+.alert-pill span{font-size:10px;color:#a05020;line-height:1.4;}
+
+/* steps list */
 .slbl{padding:4px 16px 6px;font-size:10px;font-weight:600;color:#383858;text-transform:uppercase;letter-spacing:0.07em;}
 .sr{display:flex;align-items:flex-start;gap:12px;padding:9px 16px;border-bottom:1px solid #0f0f18;cursor:pointer;}
 .sr.act{background:#12122a;}
@@ -79,225 +114,343 @@ h1{font-size:13px;color:#404060;margin-bottom:16px;letter-spacing:0.05em;text-tr
 .sbadge{flex-shrink:0;padding-top:3px;}
 .tsc{font-size:9px;font-weight:600;background:#0c2018;color:#2a7050;border-radius:6px;padding:2px 6px;}
 .fa{font-size:14px;color:#303050;}
+
+/* progress */
+.prog-b{margin:0 16px 12px;background:#141420;border-radius:8px;height:4px;}
+.prog-f{height:4px;border-radius:8px;background:#5040c0;}
+
+/* forms */
 .fsec{padding:0 16px;flex:1;}
-.flbl{font-size:10px;font-weight:600;color:#505078;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:5px;}
-.fbox{background:#141420;border:1px solid #222232;border-radius:10px;padding:10px 12px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;}
+.flbl{font-size:10px;font-weight:600;color:#505078;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:5px;margin-top:10px;}
+.flbl:first-child{margin-top:0;}
+.fbox{background:#141420;border:1px solid #222232;border-radius:10px;padding:10px 12px;margin-bottom:4px;display:flex;align-items:center;justify-content:space-between;}
 .fbox span{font-size:12px;color:#c0c0e0;}
 .fbox i{font-size:15px;color:#303050;}
-.ph-box{background:#141420;border:1.5px dashed #252535;border-radius:12px;padding:18px;margin-bottom:10px;display:flex;flex-direction:column;align-items:center;gap:6px;}
-.ph-box i{font-size:26px;color:#282840;}
+.ph-box{background:#141420;border:1.5px dashed #252535;border-radius:12px;padding:16px;margin-bottom:4px;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;}
+.ph-box i{font-size:24px;color:#282840;}
 .ph-box span{font-size:10px;color:#282840;}
 .ph-box.filled{border-style:solid;border-color:#1a3828;background:#0d1a14;}
 .ph-box.filled i{color:#1a6040;}
 .ph-box.filled span{color:#2a6040;}
-.tags-r{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.tags-r{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px;}
 .tag{background:#1a1a2e;border:1px solid #303050;border-radius:20px;font-size:10px;font-weight:600;color:#8080c0;padding:3px 9px;display:flex;align-items:center;gap:5px;}
-.tag i{font-size:10px;color:#404070;}
+.tag i{font-size:10px;color:#404070;cursor:pointer;}
 .add-t{background:#141428;border:1.5px dashed #303090;border-radius:20px;font-size:10px;font-weight:600;color:#404090;padding:3px 9px;display:flex;align-items:center;gap:4px;cursor:pointer;}
+.opt-c{font-size:9px;background:#151525;color:#383858;border-radius:8px;padding:1px 6px;margin-left:4px;vertical-align:middle;}
+
+/* checklist */
 .chklist{padding:0 16px;flex:1;}
-.chi{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #0f0f18;}
+.chi{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #0f0f18;}
 .chi:last-child{border-bottom:none;}
-.chk{width:22px;height:22px;border-radius:6px;border:1.5px solid #252535;background:#141420;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;}
+.chk{width:22px;height:22px;border-radius:6px;border:1.5px solid #252535;background:#141420;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;margin-top:1px;}
 .chk.ckd{background:#0c2018;border-color:#1a5030;}
 .chk.ckd i{font-size:13px;color:#3aa068;}
-.cht{font-size:12px;color:#c0c0e0;flex:1;line-height:1.4;}
+.chk.fail{background:#200a0a;border-color:#5a1a1a;}
+.chk.fail i{font-size:13px;color:#cc4040;}
+.cht-wrap{flex:1;}
+.cht{font-size:12px;color:#c0c0e0;line-height:1.4;}
 .cht.dn{color:#2a5038;text-decoration:line-through;text-decoration-color:#1a3828;}
+.cht-obs{font-size:10px;color:#604020;margin-top:3px;font-style:italic;}
+
+/* search */
+.search-box{margin:0 16px 10px;background:#141420;border:1px solid #222232;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:8px;}
+.search-box i{font-size:16px;color:#303050;}
+.search-inp{background:transparent;border:none;outline:none;font-size:12px;color:#c0c0e0;flex:1;font-family:inherit;}
+.search-inp::placeholder{color:#303050;}
+
+/* vehicle cards */
+.vc{margin:0 16px 8px;background:#13132a;border:1px solid #252545;border-radius:14px;padding:12px 14px;cursor:pointer;}
+.vc.sel{border-color:#1a4040;background:#0e1e20;}
+.vc-plate{font-size:15px;font-weight:700;color:#20c0a0;font-family:'Courier New',monospace;letter-spacing:0.05em;margin-bottom:3px;}
+.vc-name{font-size:11px;color:#505080;margin-bottom:7px;}
+.vc-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.vt{border-radius:6px;font-size:10px;font-weight:600;padding:3px 8px;}
+.vt-wait{background:#1a1208;color:#706030;}
+.vt-ok{background:#0c2018;color:#2a7050;}
+.vt-in{background:#0a1e20;color:#208060;}
+.vt-plan{background:#1a1a3a;color:#5050a0;}
+
+/* plan select */
+.plan-item{margin:0 16px 8px;background:#111120;border:1px solid #1e1e30;border-radius:12px;padding:11px 13px;cursor:pointer;}
+.plan-item.sel{border-color:#4040c0;background:#14142a;}
+.plan-num{font-size:12px;font-weight:700;color:#9090f8;font-family:monospace;letter-spacing:0.04em;margin-bottom:2px;}
+.plan-inf{font-size:10px;color:#505080;}
+.plan-dep{font-size:10px;font-weight:600;color:#6060a0;margin-top:4px;}
+
+/* success */
 .succ{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px 16px;}
 .sic{width:60px;height:60px;border-radius:50%;background:#0c1e14;border:2px solid #1a5030;display:flex;align-items:center;justify-content:center;}
 .sic i{font-size:28px;color:#40c878;}
-.sic.guard{background:#0a1e20;border-color:#1a4040;}
-.sic.guard i{color:#30c0c0;}
+.sic.guard-ic{background:#0a1e20;border-color:#1a4040;}
+.sic.guard-ic i{color:#30c0c0;}
 .stit{font-size:15px;font-weight:600;color:#ddddf0;text-align:center;}
-.ssub{font-size:11px;color:#404060;text-align:center;line-height:1.6;}
-.tsb{background:#0c1e14;border:1px solid #1a4030;border-radius:8px;padding:7px 14px;font-size:11px;font-weight:600;color:#40a868;font-family:monospace;letter-spacing:0.02em;}
-.tsb.guard-ts{background:#0a1a1e;border-color:#1a3a3a;color:#30b0b0;}
-.ccard{margin:0 16px 10px;background:#111120;border:1px solid #1e1e30;border-radius:12px;padding:12px 14px;}
-.ccr{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
-.ccr:last-child{margin-bottom:0;}
-.ccl{font-size:10px;color:#383858;}
-.ccv{font-size:11px;font-weight:600;color:#a0a0d0;}
-.prog-b{margin:0 16px 12px;background:#141420;border-radius:8px;height:4px;}
-.prog-f{height:4px;border-radius:8px;background:#5040c0;}
-.opt-c{font-size:9px;background:#151525;color:#383858;border-radius:8px;padding:1px 6px;margin-left:4px;vertical-align:middle;}
-.search-box{margin:0 16px 12px;background:#141420;border:1px solid #222232;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:8px;}
-.search-box i{font-size:16px;color:#303050;}
-.search-box span{font-size:12px;color:#c0c0e0;}
-.vehicle-card{margin:0 16px 10px;background:#13132a;border:1px solid #252545;border-radius:14px;padding:12px 14px;cursor:pointer;}
-.vehicle-card.selected{border-color:#1a4040;background:#0e1e20;}
-.vc-plate{font-size:15px;font-weight:700;color:#20c0a0;font-family:'Courier New',monospace;letter-spacing:0.05em;margin-bottom:4px;}
-.vc-info{font-size:11px;color:#505080;margin-bottom:8px;}
-.vc-row{display:flex;gap:10px;}
-.vc-tag{background:#1a1a3a;border-radius:6px;font-size:10px;font-weight:600;color:#5050a0;padding:3px 8px;}
-.vc-tag.ok{background:#0c2018;color:#2a7050;}
-.vc-tag.wait{background:#1a1208;color:#706030;}
-.role-sel{padding:20px 16px;flex:1;display:flex;flex-direction:column;gap:12px;}
-.role-btn{border:1.5px solid #252535;border-radius:16px;padding:16px;cursor:pointer;display:flex;align-items:center;gap:14px;background:#111120;}
-.role-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.ri-driver{background:#1a1838;}
-.ri-driver i{font-size:22px;color:#7060e0;}
-.ri-guard{background:#0e1e1c;}
-.ri-guard i{font-size:22px;color:#20a080;}
-.role-info{flex:1;}
-.role-name{font-size:13px;font-weight:600;color:#d0d0f0;margin-bottom:3px;}
-.role-desc{font-size:10px;color:#404060;line-height:1.5;}
-.role-arrow{font-size:18px;color:#303050;}
+.ssub{font-size:11px;color:#404060;text-align:center;line-height:1.6;padding:0 8px;}
+.tsb{background:#0c1e14;border:1px solid #1a4030;border-radius:8px;padding:7px 16px;font-size:11px;font-weight:600;color:#40a868;font-family:monospace;}
+.tsb.g{background:#0a1a1e;border-color:#1a3a3a;color:#30b0b0;}
+
+/* role selector */
+.role-sel{padding:16px;flex:1;display:flex;flex-direction:column;gap:10px;}
+.role-btn{border:1.5px solid #1e1e2e;border-radius:16px;padding:16px;cursor:pointer;display:flex;align-items:center;gap:14px;background:#0f0f1a;transition:background 0.1s;}
+.role-btn:active{background:#14142a;}
+.ri{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ri-d{background:#1a1838;}
+.ri-d i{font-size:22px;color:#7060e0;}
+.ri-g{background:#0e1e1c;}
+.ri-g i{font-size:22px;color:#20a080;}
+.r-info{flex:1;}
+.r-name{font-size:13px;font-weight:600;color:#d0d0f0;margin-bottom:3px;}
+.r-desc{font-size:10px;color:#404060;line-height:1.5;}
+.r-arr{font-size:18px;color:#303050;}
+
+/* hamburger menu hint */
+.ham-hint{margin:0 16px 10px;background:#13131e;border:1px solid #1e1e2e;border-radius:10px;padding:9px 12px;display:flex;align-items:center;gap:8px;}
+.ham-hint i{font-size:15px;color:#404070;flex-shrink:0;}
+.ham-hint span{font-size:10px;color:#404060;line-height:1.5;}
+
+/* pages */
 .page{display:none;flex:1;flex-direction:column;}
 .page.active{display:flex;}
-.sync-pill{margin:0 16px 8px;background:#0a1e1c;border:1px solid #1a3830;border-radius:8px;padding:7px 10px;display:flex;align-items:center;gap:7px;}
-.sync-pill i{font-size:13px;color:#20a070;flex-shrink:0;}
-.sync-pill span{font-size:10px;color:#207050;line-height:1.4;}
-.role-tag{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:0.05em;}
-.rt-guard{background:#0a1e1c;color:#20a080;}
-.rt-driver{background:#1a1838;color:#7060e0;}
-.status-bar-bottom{display:flex;justify-content:center;padding:10px 0 4px;gap:6px;}
-.dot{width:6px;height:6px;border-radius:50%;background:#1e1e2c;}
-.dot.active{background:#5040c0;}
+
+/* divider */
+.div-line{height:1px;background:#0f0f18;margin:4px 0;}
 </style>
 </head>
 <body>
-<h1>Pre-despacho Ransa Cargo · Prototipo</h1>
+<div class="top-label">Pre-despacho · Ransa Cargo Colombia</div>
+
 <div class="device">
   <div class="notch"></div>
   <div class="screen">
 
+  <!-- ===== SELECTOR DE ROL ===== -->
   <div id="p-select" class="page active">
     <div class="sbar"><span class="sbar-t">06:00</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div></div>
-    <div class="topbar"><div class="tb-main"><div class="tb-title">Simpli — Ransa Cargo</div><div class="tb-sub">¿Con qué perfil ingresas?</div></div></div>
+    <div class="topbar"><div class="tb-main"><div class="tb-title">Simpli — Ransa Cargo</div><div class="tb-sub">Selecciona tu perfil de acceso</div></div></div>
     <div class="role-sel">
-      <div style="font-size:10px;color:#383858;text-align:center;padding:4px 0 8px;">Selecciona tu rol para ver el flujo correspondiente</div>
+      <div style="font-size:10px;color:#303050;text-align:center;padding:8px 0 12px;">Elige tu rol para ver el flujo que te corresponde</div>
       <div class="role-btn" onclick="go('p-c1')">
-        <div class="role-icon ri-driver"><i class="ti ti-steering-wheel"></i></div>
-        <div class="role-info"><div class="role-name">Conductor</div><div class="role-desc">Inspección del vehículo, recogida de documentos, cargue y registro de precintos</div></div>
-        <i class="ti ti-chevron-right role-arrow"></i>
+        <div class="ri ri-d"><i class="ti ti-steering-wheel"></i></div>
+        <div class="r-info"><div class="r-name">Conductor</div><div class="r-desc">Inspección del vehículo, recogida de documentos, cargue y registro de precintos</div></div>
+        <i class="ti ti-chevron-right r-arr"></i>
       </div>
       <div class="role-btn" onclick="go('p-g1')">
-        <div class="role-icon ri-guard"><i class="ti ti-shield-lock"></i></div>
-        <div class="role-info"><div class="role-name">Guardia de seguridad</div><div class="role-desc">Control de entrada y salida del vehículo en el CEDI — gate-in y gate-out</div></div>
-        <i class="ti ti-chevron-right role-arrow"></i>
+        <div class="ri ri-g"><i class="ti ti-shield-lock"></i></div>
+        <div class="r-info"><div class="r-name">Guardia de seguridad</div><div class="r-desc">Control de entrada y salida del vehículo en el CEDI — gate-in y gate-out</div></div>
+        <i class="ti ti-chevron-right r-arr"></i>
       </div>
-      <div style="margin-top:auto;padding-top:20px;font-size:10px;color:#282838;text-align:center;">Ransa Cargo Colombia · CEDI Bogotá Norte</div>
+      <div style="margin-top:auto;font-size:10px;color:#202030;text-align:center;padding-top:20px;">CEDI Bogotá Norte · Ransa Cargo Colombia</div>
     </div>
   </div>
 
+  <!-- ===== CONDUCTOR ===== -->
+
+  <!-- C1: Mis viajes -->
   <div id="p-c1" class="page">
     <div class="sbar"><span class="sbar-t">06:01</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-select')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title">Mis viajes</div><div class="tb-sub">Miércoles 27 may 2026</div></div><span class="role-tag rt-driver">Conductor</span></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-select')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title">Mis viajes</div><div class="tb-sub">Miércoles 27 may 2026</div></div>
+      <span class="role-tag rt-driver">Conductor</span>
+    </div>
     <div class="sbody">
       <div class="greet"><div class="g-hi">Buenos días,</div><div class="g-name">Carlos Martínez</div><div class="g-inf">1 viaje asignado para hoy</div></div>
-      <div class="vfc"><div class="vfn">VF-CNBO-00124</div><div class="vfr"><span class="vff">Bogotá CD Norte</span><span class="vfa">›</span><span class="vfs">4 paradas</span></div><div class="vfm"><div class="vfmi"><span class="vfml">Placa</span><span class="vfmv">KDR-482</span></div><div class="vfmi"><span class="vfml">Ventana</span><span class="vfmv">06:00–14:00</span></div><div class="vfmi"><span class="vfml">Tipo</span><span class="vfmv">Exclusivo</span></div></div></div>
-      <div class="info-b"><i class="ti ti-info-circle"></i><span>Completa el proceso de pre-despacho para poder iniciar tu ruta.</span></div>
+      <div class="vfc">
+        <div class="vfn">VF-CNBO-00124</div>
+        <div class="vfr"><span class="vff">Bogotá CD Norte</span><span class="vfa">›</span><span class="vfs">4 paradas</span></div>
+        <div class="vfm">
+          <div class="vfmi"><span class="vfml">Placa</span><span class="vfmv">KDR-482</span></div>
+          <div class="vfmi"><span class="vfml">Ventana</span><span class="vfmv">06:00–14:00</span></div>
+          <div class="vfmi"><span class="vfml">Tipo</span><span class="vfmv">Exclusivo</span></div>
+        </div>
+      </div>
+      <div class="ham-hint"><i class="ti ti-menu-2"></i><span>El proceso de pre-despacho está disponible en el menú lateral ☰ cuando estés en el CEDI.</span></div>
       <div style="flex:1;"></div>
-      <div class="cta-z"><button class="btn b-purple" onclick="go('p-c2')"><i class="ti ti-clipboard-list"></i> Ver pre-despacho</button></div>
+      <div class="cta-z">
+        <button class="btn b-purple" onclick="go('p-c2')"><i class="ti ti-clipboard-list"></i> Iniciar pre-despacho</button>
+      </div>
     </div>
   </div>
 
+  <!-- C2: Hub pre-despacho (estado inicial) -->
   <div id="p-c2" class="page">
     <div class="sbar"><span class="sbar-t">06:02</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-c1')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#9090f0;letter-spacing:0.04em;">VF-CNBO-00124</div><div class="tb-sub">Bogotá CD Norte · 4 paradas</div></div><span class="pill p-gray">Pendiente</span></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-c1')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#9090f0;letter-spacing:0.04em;">VF-CNBO-00124</div><div class="tb-sub">Bogotá CD Norte · 4 paradas</div></div>
+      <span class="pill p-gray">Pendiente</span>
+    </div>
     <div class="sbody">
       <div class="prog-b"><div class="prog-f" style="width:0%"></div></div>
-      <div class="slbl">Pasos para iniciar ruta</div>
-      <div class="sr act" onclick="go('p-c3')"><div class="sc"><div class="sd sd-act"><i class="ti ti-shield-check"></i></div><div class="sl"></div></div><div class="sb"><div class="sn">Aprobación en portería</div><div class="ss act">Esperando al guardia de seguridad</div></div><div class="sbadge"><i class="ti ti-chevron-right fa"></i></div></div>
-      <div class="sr"><div class="sc"><div class="sd sd-pend">2</div><div class="sl"></div></div><div class="sb"><div class="sn pend">Inspección del vehículo</div><div class="ss">Revisión preoperacional diaria</div></div></div>
-      <div class="sr"><div class="sc"><div class="sd sd-pend">3</div><div class="sl"></div></div><div class="sb"><div class="sn pend">Inspección de cargue</div><div class="ss">Control calidad y seguridad BASC</div></div></div>
-      <div class="sr"><div class="sc"><div class="sd sd-pend">4</div><div class="sl"></div></div><div class="sb"><div class="sn pend">Recogida de documentos</div><div class="ss">Planilla y facturas</div></div></div>
-      <div class="sr"><div class="sc"><div class="sd sd-pend">5</div><div class="sl"></div></div><div class="sb"><div class="sn pend">Registro de carga</div><div class="ss">Inicio, fin, precintos y temperatura</div></div></div>
-      <div class="sr" style="border-bottom:none;"><div class="sc"><div class="sd sd-pend">6</div></div><div class="sb"><div class="sn pend">Autorización de salida</div><div class="ss">Guardia confirma precintos y cierre</div></div></div>
+      <div class="slbl">Pasos del pre-despacho</div>
+      <div class="sr act" onclick="go('p-c3')">
+        <div class="sc"><div class="sd sd-act"><i class="ti ti-shield-check"></i></div><div class="sl"></div></div>
+        <div class="sb"><div class="sn">Aprobación en portería</div><div class="ss act">Esperando al guardia de seguridad</div></div>
+        <div class="sbadge"><i class="ti ti-chevron-right fa"></i></div>
+      </div>
+      <div class="sr"><div class="sc"><div class="sd sd-pend">2</div><div class="sl"></div></div><div class="sb"><div class="sn pend">Inspección del vehículo</div><div class="ss">Checklist preoperacional diario</div></div></div>
+      <div class="sr"><div class="sc"><div class="sd sd-pend">3</div><div class="sl"></div></div><div class="sb"><div class="sn pend">Recogida de documentos</div><div class="ss">Confirmar planilla y documentos</div></div></div>
+      <div class="sr"><div class="sc"><div class="sd sd-pend">4</div><div class="sl"></div></div><div class="sb"><div class="sn pend">Inicio de carga</div><div class="ss">Registrar hora de entrada al muelle</div></div></div>
+      <div class="sr" style="border-bottom:none;"><div class="sc"><div class="sd sd-pend">5</div></div><div class="sb"><div class="sn pend">Fin de carga</div><div class="ss">Precintos, foto ThermoKing y temperatura</div></div></div>
       <div style="flex:1;"></div>
-      <div class="cta-z"><button class="btn b-dis" disabled><i class="ti ti-lock"></i> Iniciar ruta — pendiente</button></div>
+      <div class="cta-z"><button class="btn b-dis" disabled><i class="ti ti-lock"></i> Iniciar ruta — completa los pasos</button></div>
     </div>
   </div>
 
+  <!-- C3: Aprobación portería (gate-in del guardia) -->
   <div id="p-c3" class="page">
     <div class="sbar"><span class="sbar-t">06:08</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-c2')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title">Aprobación en portería</div></div></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-c2')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title">Aprobación en portería</div></div>
+    </div>
     <div class="sbody">
       <div class="sync-pill"><i class="ti ti-checks"></i><span>El guardia aprobó tu ingreso al CEDI a las 06:08</span></div>
       <div class="succ" style="justify-content:flex-start;padding-top:16px;">
-        <div class="sic guard"><i class="ti ti-shield-check"></i></div>
+        <div class="sic guard-ic"><i class="ti ti-shield-check"></i></div>
         <div class="stit">Ingreso aprobado</div>
         <div class="ssub">Ya puedes iniciar la inspección de tu vehículo.</div>
-        <div class="tsb guard-ts">06:08 · KDR-482 · aprobado</div>
-        <div class="ccard" style="width:100%;margin:8px 0 0;"><div class="ccr"><span class="ccl">Placa verificada</span><span class="ccv">KDR-482</span></div><div class="ccr"><span class="ccl">Conductor</span><span class="ccv">Carlos Martínez</span></div><div class="ccr"><span class="ccl">Viaje</span><span class="ccv" style="font-family:monospace;color:#7070d0;">VF-CNBO-00124</span></div></div>
+        <div class="tsb g">06:08 · KDR-482 · aprobado</div>
+        <div class="ccard" style="width:100%;margin:8px 0 0;">
+          <div class="ccr"><span class="ccl">Placa verificada</span><span class="ccv">KDR-482</span></div>
+          <div class="ccr"><span class="ccl">Conductor</span><span class="ccv">Carlos Martínez</span></div>
+          <div class="ccr"><span class="ccl">Viaje</span><span class="ccv" style="font-family:monospace;color:#7070d0;">VF-CNBO-00124</span></div>
+        </div>
       </div>
       <div style="flex:1;"></div>
       <div class="cta-z"><button class="btn b-purple" onclick="go('p-c4')"><i class="ti ti-clipboard-check"></i> Iniciar inspección del vehículo</button></div>
     </div>
   </div>
 
+  <!-- C4: Checklist inspección -->
   <div id="p-c4" class="page">
     <div class="sbar"><span class="sbar-t">06:12</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-c3')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title">Inspección del vehículo</div><div class="tb-sub">KDR-482 · revisión diaria</div></div><span class="pill p-amber">Obligatorio</span></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-c3')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title">Inspección del vehículo</div><div class="tb-sub">KDR-482 · revisión preoperacional</div></div>
+      <span class="pill p-amber">Obligatorio</span>
+    </div>
     <div class="sbody">
-      <div style="padding:0 16px 8px;font-size:10px;color:#383858;">Marca cada ítem como revisado. Se realiza una vez por día.</div>
+      <div style="padding:4px 16px 8px;font-size:10px;color:#383858;line-height:1.6;">Marca cada ítem. Si hay una falla, el conductor puede continuar — queda registrada para seguridad vial.</div>
       <div class="chklist" id="cl1">
-        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><span class="cht">Frenos y sistema de frenado</span></div>
-        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><span class="cht">Luces delanteras y traseras</span></div>
-        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><span class="cht">Nivel de aceite y combustible</span></div>
-        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><span class="cht">Neumáticos y presión</span></div>
-        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><span class="cht">Espejos y vidrios</span></div>
-        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><span class="cht">Extintor y kit de emergencia</span></div>
+        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><div class="cht-wrap"><span class="cht">Frenos y sistema de frenado</span></div></div>
+        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><div class="cht-wrap"><span class="cht">Luces delanteras y traseras</span></div></div>
+        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><div class="cht-wrap"><span class="cht">Nivel de aceite y combustible</span></div></div>
+        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><div class="cht-wrap"><span class="cht">Neumáticos y presión</span></div></div>
+        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><div class="cht-wrap"><span class="cht">Espejos y vidrios</span></div></div>
+        <div class="chi"><div class="chk" onclick="tc(this,'cl1','bc1')"><i class="ti ti-check" style="display:none;"></i></div><div class="cht-wrap"><span class="cht">Extintor y kit de emergencia</span></div></div>
       </div>
-      <div style="flex:1;"></div>
+      <div style="flex:1;min-height:8px;"></div>
       <div class="cta-z"><button id="bc1" class="btn b-dis" disabled onclick="go('p-c5')">Confirmar inspección</button></div>
     </div>
   </div>
 
+  <!-- C5: Recogida documentos -->
   <div id="p-c5" class="page">
-    <div class="sbar"><span class="sbar-t">08:55</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-c4')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title">Recogida de documentos</div><div class="tb-sub">Confirma recepción</div></div></div>
+    <div class="sbar"><span class="sbar-t">08:52</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-c4')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title">Recogida de documentos</div><div class="tb-sub">Área de documentación</div></div>
+    </div>
     <div class="sbody">
-      <div style="padding:0 16px 10px;font-size:10px;color:#383858;line-height:1.6;">Dirígete al área de documentación y recibe tu planilla de cargue con las facturas del viaje.</div>
-      <div class="ccard"><div class="ccr"><span class="ccl">Planilla de cargue</span><span class="ccv">PCR-00124</span></div><div class="ccr"><span class="ccl">Facturas incluidas</span><span class="ccv">12 documentos</span></div><div class="ccr"><span class="ccl">Puntos de entrega</span><span class="ccv">4 paradas</span></div></div>
-      <div class="warn-b"><i class="ti ti-alert-triangle"></i><span>Verifica que los documentos correspondan a tu planilla antes de confirmar.</span></div>
+      <div style="padding:4px 16px 10px;font-size:10px;color:#383858;line-height:1.6;">Dirígete al área de documentación, recibe tu planilla de cargue y confirma que tienes todo antes de ir al muelle.</div>
+      <div class="ccard">
+        <div class="ccr"><span class="ccl">Viaje</span><span class="ccv" style="font-family:monospace;color:#7070d0;">VF-CNBO-00124</span></div>
+        <div class="ccr"><span class="ccl">Paradas del día</span><span class="ccv">4 puntos de entrega</span></div>
+        <div class="ccr"><span class="ccl">Precintos incluidos</span><span class="ccv">Verificar con el área</span></div>
+      </div>
+      <div class="warn-b"><i class="ti ti-alert-triangle"></i><span>Verifica que los documentos correspondan a tu plan antes de confirmar. Los precintos físicos los recibes aquí.</span></div>
       <div style="flex:1;"></div>
       <div class="cta-z"><button class="btn b-purple" onclick="go('p-c6')"><i class="ti ti-circle-check"></i> Documentos recibidos</button></div>
     </div>
   </div>
 
+  <!-- C6: Inicio de carga -->
   <div id="p-c6" class="page">
     <div class="sbar"><span class="sbar-t">09:07</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-c5')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title">Registro de carga</div><div class="tb-sub">Cargue en curso</div></div><span class="pill p-amber">En carga</span></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-c5')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title">Inicio de carga</div><div class="tb-sub">Confirma que estás en el muelle</div></div>
+      <span class="pill p-amber">Muelle</span>
+    </div>
+    <div class="sbody">
+      <div class="succ" style="justify-content:flex-start;padding-top:20px;">
+        <div style="width:56px;height:56px;border-radius:50%;background:#1a1218;border:2px solid #c4702b;display:flex;align-items:center;justify-content:center;">
+          <i class="ti ti-clock-bolt" style="font-size:26px;color:#e08040;"></i>
+        </div>
+        <div class="stit">¿Ya estás en el muelle?</div>
+        <div class="ssub">Confirma el inicio de carga cuando el camión esté estacionado en el andén asignado. Se registra la hora exacta.</div>
+        <div class="ccard" style="width:100%;">
+          <div class="ccr"><span class="ccl">Viaje</span><span class="ccv" style="font-family:monospace;color:#7070d0;">VF-CNBO-00124</span></div>
+          <div class="ccr"><span class="ccl">Vehículo</span><span class="ccv">KDR-482</span></div>
+          <div class="ccr"><span class="ccl">Hora actual</span><span class="ccv">09:07</span></div>
+        </div>
+      </div>
+      <div style="flex:1;"></div>
+      <div class="cta-z"><button class="btn b-amber" onclick="go('p-c7')"><i class="ti ti-player-play"></i> Confirmar inicio de carga</button></div>
+    </div>
+  </div>
+
+  <!-- C7: Fin de carga + precintos -->
+  <div id="p-c7" class="page">
+    <div class="sbar"><span class="sbar-t">09:07</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-c6')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title">Fin de carga</div><div class="tb-sub">Cargue en curso · KDR-482</div></div>
+      <span class="pill p-amber">En carga</span>
+    </div>
     <div class="sbody">
       <div class="fsec">
-        <div class="flbl">Inicio de carga</div>
+        <div class="flbl">Inicio registrado</div>
         <div class="fbox"><span>09:07 — confirmado</span><i class="ti ti-circle-check" style="color:#2a6040;"></i></div>
+
         <div class="flbl">Precintos <span style="color:#cc4040;">*</span></div>
         <div style="font-size:10px;color:#383858;margin-bottom:6px;">Ingresa el código de cada precinto recibido físicamente.</div>
         <div class="tags-r" id="prec-tags">
           <div class="add-t" onclick="addP(this)"><i class="ti ti-plus"></i> agregar precinto</div>
         </div>
-        <div class="flbl">Foto camión sellado <span style="color:#cc4040;">*</span></div>
-        <div class="ph-box filled"><i class="ti ti-photo-check"></i><span>foto_cierre_kdr482.jpg</span></div>
-        <div class="flbl">Temperatura ThermoKing <span class="opt-c">opcional</span></div>
-        <div class="fbox"><span>4.5 °C</span><i class="ti ti-temperature"></i></div>
+
+        <div class="flbl">Foto ThermoKing <span class="opt-c">opcional · solo cadena fría</span></div>
+        <div class="ph-box"><i class="ti ti-camera"></i><span>Tomar foto a la pantalla del equipo de frío</span></div>
+
+        <div class="flbl">Temperatura registrada <span class="opt-c">opcional · solo cadena fría</span></div>
+        <div class="fbox" style="background:#141420;border:1px solid #222232;border-radius:10px;padding:0;overflow:hidden;">
+          <input type="text" placeholder="Ej: 4.5 °C" style="background:transparent;border:none;outline:none;padding:10px 12px;font-size:12px;color:#c0c0e0;width:100%;font-family:inherit;">
+        </div>
       </div>
-      <div style="flex:1;"></div>
-      <div class="cta-z"><button class="btn b-green" onclick="go('p-c7')"><i class="ti ti-lock"></i> Confirmar cierre de carga</button></div>
+      <div style="flex:1;min-height:8px;"></div>
+      <div class="cta-z"><button class="btn b-green" onclick="go('p-c8')"><i class="ti ti-lock"></i> Confirmar cierre de carga</button></div>
     </div>
   </div>
 
-  <div id="p-c7" class="page">
+  <!-- C8: Resumen final + iniciar ruta -->
+  <div id="p-c8" class="page">
     <div class="sbar"><span class="sbar-t">09:37</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-c6')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#9090f0;letter-spacing:0.04em;">VF-CNBO-00124</div><div class="tb-sub">Pre-despacho completado</div></div><span class="pill p-green">Listo</span></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-c7')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#9090f0;letter-spacing:0.04em;">VF-CNBO-00124</div><div class="tb-sub">Pre-despacho completado</div></div>
+      <span class="pill p-green">Listo</span>
+    </div>
     <div class="sbody">
-      <div class="sync-pill"><i class="ti ti-checks"></i><span>El guardia autorizó la salida del CEDI a las 09:37</span></div>
+      <div class="sync-pill"><i class="ti ti-checks"></i><span>El guardia de portería autorizó tu salida a las 09:37</span></div>
       <div class="prog-b"><div class="prog-f" style="width:100%"></div></div>
       <div class="slbl">Resumen pre-despacho</div>
-      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Aprobación en portería</div><div class="ss dn">06:08</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Aprobación en portería</div><div class="ss dn">06:08 · gate-in</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
       <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Inspección del vehículo</div><div class="ss dn">06:28 · 6 ítems OK</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
-      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Inspección de cargue</div><div class="ss dn">07:15 · BASC</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
-      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Recogida de documentos</div><div class="ss dn">08:55</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
-      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Registro de carga</div><div class="ss dn">09:07–09:35 · precintos registrados</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
-      <div class="sr" style="border-bottom:none;"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div></div><div class="sb"><div class="sn">Autorización de salida</div><div class="ss dn">09:37 · guardia</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
-      <div style="flex:1;"></div>
-      <div class="cta-z"><button class="btn b-green" onclick="go('p-c8')"><i class="ti ti-map-pin"></i> Iniciar ruta</button></div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Recogida de documentos</div><div class="ss dn">08:52 · confirmado</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Inicio de carga</div><div class="ss dn">09:07 · muelle confirmado</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
+      <div class="sr" style="border-bottom:none;"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div></div><div class="sb"><div class="sn">Fin de carga</div><div class="ss dn">09:35 ✓</div></div><div class="sbadge"><span class="tsc">✓</span></div></div>
+      <div style="flex:1;min-height:6px;"></div>
+      <div class="cta-z"><button class="btn b-green" onclick="go('p-c9')"><i class="ti ti-map-pin"></i> Iniciar ruta</button></div>
     </div>
   </div>
 
-  <div id="p-c8" class="page">
+  <!-- C9: En ruta -->
+  <div id="p-c9" class="page">
     <div class="sbar"><span class="sbar-t">09:38</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
-    <div class="topbar"><div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#9090f0;letter-spacing:0.04em;">VF-CNBO-00124</div><div class="tb-sub">En ruta · iniciada 09:38</div></div><span class="pill p-green">En ruta</span></div>
+    <div class="topbar">
+      <div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#9090f0;letter-spacing:0.04em;">VF-CNBO-00124</div><div class="tb-sub">En ruta · iniciada 09:38</div></div>
+      <span class="pill p-green">En ruta</span>
+    </div>
     <div class="sbody">
       <div style="padding:6px 16px 10px;"><div style="background:#0c1e14;border:1px solid #1a4030;border-radius:12px;padding:12px 14px;"><div style="font-size:11px;color:#2a7050;font-weight:600;margin-bottom:4px;">Ruta en curso</div><div style="font-size:13px;font-weight:600;color:#c0c0e0;margin-bottom:2px;">Bogotá CD Norte</div><div style="font-size:10px;color:#383858;">4 paradas · KDR-482</div></div></div>
       <div class="slbl">Paradas de hoy</div>
@@ -310,80 +463,234 @@ h1{font-size:13px;color:#404060;margin-bottom:16px;letter-spacing:0.05em;text-tr
     </div>
   </div>
 
+  <!-- ===== GUARDIA ===== -->
+
+  <!-- G1: Búsqueda por placa -->
   <div id="p-g1" class="page">
     <div class="sbar"><span class="sbar-t">05:58</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-select')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title">Control de portería</div><div class="tb-sub">CEDI Bogotá Norte · hoy</div></div><span class="role-tag rt-guard">Guardia</span></div>
-    <div class="sbody">
-      <div class="greet"><div class="g-hi">Turno activo,</div><div class="g-name">Marco Díaz</div><div class="g-inf">Supervisor de seguridad · 06:00–14:00</div></div>
-      <div class="search-box"><i class="ti ti-search"></i><span>Buscar por placa...</span></div>
-      <div class="slbl">Vehículos del día — 3 programados</div>
-      <div class="vehicle-card selected" onclick="go('p-g2')"><div class="vc-plate">KDR-482</div><div class="vc-info">Carlos Martínez · VF-CNBO-00124 · 06:00–14:00</div><div class="vc-row"><span class="vc-tag wait">Esperando gate-in</span></div></div>
-      <div class="vehicle-card"><div class="vc-plate">PLT-091</div><div class="vc-info">Ana Gómez · VF-CNBO-00125 · 07:00–15:00</div><div class="vc-row"><span class="vc-tag ok">Gate-in ✓ · 06:52</span></div></div>
-      <div class="vehicle-card"><div class="vc-plate">MRC-334</div><div class="vc-info">Luis Peña · VF-CNBO-00126 · 07:30–16:00</div><div class="vc-row"><span class="vc-tag">Programado · 07:30</span></div></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-select')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title">Control de portería</div><div class="tb-sub">CEDI Bogotá Norte · turno 06:00–14:00</div></div>
+      <span class="role-tag rt-guard">Guardia</span>
     </div>
-  </div>
-
-  <div id="p-g2" class="page">
-    <div class="sbar"><span class="sbar-t">06:07</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#20c0a0;letter-spacing:0.04em;">KDR-482</div><div class="tb-sub">Verificación de ingreso</div></div><span class="role-tag rt-guard">Guardia</span></div>
     <div class="sbody">
-      <div class="ccard"><div class="ccr"><span class="ccl">Conductor</span><span class="ccv">Carlos Martínez</span></div><div class="ccr"><span class="ccl">Cédula</span><span class="ccv">79.845.231</span></div><div class="ccr"><span class="ccl">Viaje</span><span class="ccv" style="font-family:monospace;color:#20c0a0;">VF-CNBO-00124</span></div><div class="ccr"><span class="ccl">Paradas</span><span class="ccv">4 · Bogotá Norte</span></div><div class="ccr"><span class="ccl">Documentos</span><span class="ccv" style="color:#2a9060;">Vigentes ✓</span></div></div>
-      <div class="info-b"><i class="ti ti-user-check"></i><span>Verifica que el conductor y la placa coincidan con el plan del día antes de aprobar.</span></div>
-      <div style="flex:1;"></div>
-      <div class="cta-z"><button class="btn b-teal" onclick="go('p-g3')"><i class="ti ti-shield-check"></i> Aprobar ingreso — gate-in</button><button class="b-sec" onclick="go('p-g1')">Rechazar ingreso</button></div>
-    </div>
-  </div>
-
-  <div id="p-g3" class="page">
-    <div class="sbar"><span class="sbar-t">06:08</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title">Gate-in registrado</div></div><span class="role-tag rt-guard">Guardia</span></div>
-    <div class="sbody">
-      <div class="succ" style="justify-content:flex-start;padding-top:20px;">
-        <div class="sic guard"><i class="ti ti-shield-check"></i></div>
-        <div class="stit">Ingreso aprobado</div>
-        <div class="ssub">El conductor puede iniciar el proceso de inspección y cargue.</div>
-        <div class="tsb guard-ts">06:08 · gate-in registrado</div>
-        <div class="ccard" style="width:100%;margin:8px 0 0;"><div class="ccr"><span class="ccl">Placa</span><span class="ccv">KDR-482</span></div><div class="ccr"><span class="ccl">Viaje</span><span class="ccv" style="font-family:monospace;color:#20c0a0;">VF-CNBO-00124</span></div></div>
+      <div class="greet"><div class="g-hi">Turno activo,</div><div class="g-name">Marco Díaz</div><div class="g-inf">Supervisor de seguridad</div></div>
+      <div class="search-box">
+        <i class="ti ti-search"></i>
+        <input class="search-inp" type="text" placeholder="Ingresa la placa del vehículo..." id="plate-inp" oninput="handlePlate(this.value)">
+      </div>
+      <div id="plate-hint" style="padding:0 16px 10px;font-size:10px;color:#303050;line-height:1.6;">Ingresa la placa para consultar los planes del día asociados a ese vehículo y depósito.</div>
+      <div id="plate-results" style="display:none;">
+        <div class="slbl">Planes del día — KDR-482</div>
+        <div style="padding:0 16px 6px;font-size:9px;font-weight:600;color:#303858;text-transform:uppercase;letter-spacing:0.06em;">Gate-in pendiente</div>
+        <div class="plan-item sel" onclick="selectPlan(this,'p-g2')">
+          <div class="plan-num">VF-CNBO-00124</div>
+          <div style="font-size:11px;font-weight:600;color:#c0c0e0;margin-bottom:2px;">Frisby Bogotá Norte</div>
+          <div class="plan-inf">Carlos Martínez · Exclusivo · 4 paradas</div>
+          <div class="plan-dep">🕕 Depart. 06:00 · Bogotá CD Norte · Cadena seca</div>
+          <div style="margin-top:6px;"><span class="vt vt-wait">⏳ Esperando gate-in</span></div>
+        </div>
+        <div style="padding:8px 16px 6px;font-size:9px;font-weight:600;color:#303858;text-transform:uppercase;letter-spacing:0.06em;">Solicita gate-out</div>
+        <div class="plan-item" onclick="selectPlan(this,'p-g4')">
+          <div class="plan-num">VF-CNBO-00131</div>
+          <div style="font-size:11px;font-weight:600;color:#c0c0e0;margin-bottom:2px;">Cencosud Ruta Tarde</div>
+          <div class="plan-inf">Ana Gómez · Consolidado · 6 paradas</div>
+          <div class="plan-dep">🕑 Depart. 14:00 · Bogotá CD Norte · Cadena seca</div>
+          <div style="margin-top:6px;"><span class="vt vt-in">✓ Cargue completo · listo para salir</span></div>
+        </div>
       </div>
       <div style="flex:1;"></div>
-      <div class="cta-z"><button class="btn b-teal" onclick="go('p-g4')"><i class="ti ti-list-check"></i> Ver estado del viaje</button><button class="b-sec" onclick="go('p-g1')">Volver a portería</button></div>
     </div>
   </div>
 
+  <!-- G2: Verificar conductor -->
+  <div id="p-g2" class="page">
+    <div class="sbar"><span class="sbar-t">06:07</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#20c0a0;letter-spacing:0.04em;">KDR-482</div><div class="tb-sub">Verificación de ingreso</div></div>
+      <span class="role-tag rt-guard">Guardia</span>
+    </div>
+    <div class="sbody">
+      <div class="ccard">
+        <div class="ccr"><span class="ccl">Conductor</span><span class="ccv">Carlos Martínez</span></div>
+        <div class="ccr"><span class="ccl">Cédula</span><span class="ccv">79.845.231</span></div>
+        <div class="ccr"><span class="ccl">Plan</span><span class="ccv" style="font-family:monospace;color:#20c0a0;">VF-CNBO-00124</span></div>
+        <div class="ccr"><span class="ccl">Nombre del plan</span><span class="ccv">Frisby Bogotá Norte</span></div>
+        <div class="ccr"><span class="ccl">Paradas</span><span class="ccv">4 · Bogotá Norte</span></div>
+      </div>
+      <div style="margin:0 16px 10px;background:#111120;border:1px solid #1e1e30;border-radius:12px;padding:10px 14px;">
+        <div style="font-size:9px;font-weight:600;color:#303858;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px;">Documentos del conductor</div>
+        <div class="ccr"><span class="ccl">Licencia de conducir</span><span class="ccv" style="color:#2a9060;">C2 · vence 15-mar-2027 ✓</span></div>
+        <div class="ccr"><span class="ccl">SOAT</span><span class="ccv" style="color:#2a9060;">Vigente ✓</span></div>
+        <div class="ccr" style="margin-bottom:0;"><span class="ccl">Rev. técnico-mecánica</span><span class="ccv" style="color:#2a9060;">Vigente ✓</span></div>
+      </div>
+      <div class="info-b"><i class="ti ti-user-check"></i><span>Verifica que el conductor y la placa coincidan con el plan antes de aprobar el ingreso.</span></div>
+      <div style="flex:1;"></div>
+      <div class="cta-z">
+        <button class="btn b-teal" onclick="go('p-g3')"><i class="ti ti-shield-check"></i> Aprobar ingreso — gate-in</button>
+        <button class="b-sec" onclick="go('p-g1')">Rechazar ingreso</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- G3: Gate-in confirmado -->
+  <div id="p-g3" class="page">
+    <div class="sbar"><span class="sbar-t">06:08</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title">Gate-in registrado</div></div>
+      <span class="role-tag rt-guard">Guardia</span>
+    </div>
+    <div class="sbody">
+      <div class="succ">
+        <div class="sic guard-ic"><i class="ti ti-shield-check"></i></div>
+        <div class="stit">Ingreso aprobado</div>
+        <div class="ssub">El conductor puede iniciar la inspección y cargue dentro del CEDI.</div>
+        <div class="tsb g">06:08 · gate-in registrado</div>
+        <div class="ccard" style="width:100%;margin:4px 0 0;">
+          <div class="ccr"><span class="ccl">Placa</span><span class="ccv">KDR-482</span></div>
+          <div class="ccr"><span class="ccl">Plan</span><span class="ccv" style="font-family:monospace;color:#20c0a0;">VF-CNBO-00124</span></div>
+        </div>
+        <div style="font-size:10px;color:#303858;margin-top:4px;" id="g3-count">Volviendo a portería en 3...</div>
+      </div>
+      <div style="flex:1;"></div>
+      <div class="cta-z">
+        <button class="b-sec" onclick="go('p-g1')">Volver a portería ahora</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- G4c: Esperando fin de carga del conductor -->
+  <div id="p-g4c" class="page">
+    <div class="sbar"><span class="sbar-t">09:15</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#20c0a0;letter-spacing:0.04em;">KDR-482</div><div class="tb-sub">Cargue en curso</div></div>
+      <span class="role-tag rt-guard">Guardia</span>
+    </div>
+    <div class="sbody">
+      <div class="alert-pill" style="background:#0a1020;border-color:#1a2040;"><i class="ti ti-clock" style="color:#4060a0;"></i><span style="color:#3050a0;">El conductor aún no ha confirmado el fin de carga. El gate-out se habilitará automáticamente cuando termine.</span></div>
+      <div class="slbl">Estado del conductor</div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Inspección del vehículo</div><div class="ss dn">06:28 ✓</div></div></div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Recogida de documentos</div><div class="ss dn">08:52 ✓</div></div></div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl"></div></div><div class="sb"><div class="sn">Inicio de carga</div><div class="ss dn">09:07 ✓</div></div></div>
+      <div class="sr" style="border-bottom:none;"><div class="sc"><div class="sd sd-act"><i class="ti ti-loader"></i></div></div><div class="sb"><div class="sn" style="color:#5060a0;">Fin de carga</div><div class="ss act">En progreso...</div></div></div>
+      <div style="flex:1;"></div>
+      <div class="cta-z">
+        <button class="btn b-dis" disabled><i class="ti ti-lock"></i> Gate-out — esperando fin de carga</button>
+        <button class="b-sec" onclick="go('p-g1')">Volver a portería</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- G4: Estado del cargue — gate-out -->
   <div id="p-g4" class="page">
     <div class="sbar"><span class="sbar-t">09:36</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#20c0a0;letter-spacing:0.04em;">KDR-482</div><div class="tb-sub">Cargue completado · listo para gate-out</div></div><span class="role-tag rt-guard">Guardia</span></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#20c0a0;letter-spacing:0.04em;">KDR-482</div><div class="tb-sub">Listo para gate-out</div></div>
+      <span class="role-tag rt-guard">Guardia</span>
+    </div>
     <div class="sbody">
-      <div class="sync-pill"><i class="ti ti-checks"></i><span>Conductor completó el cargue a las 09:35 · Precintos registrados</span></div>
-      <div class="ccard"><div class="ccr"><span class="ccl">Gate-in</span><span class="ccv" style="color:#2a9060;">06:08 ✓</span></div><div class="ccr"><span class="ccl">Inspección</span><span class="ccv" style="color:#2a9060;">06:28 ✓</span></div><div class="ccr"><span class="ccl">Fin de carga</span><span class="ccv" style="color:#2a9060;">09:35 ✓</span></div><div class="ccr"><span class="ccl">Precintos</span><span class="ccv" style="color:#2a9060;">Registrados ✓</span></div><div class="ccr"><span class="ccl">Temperatura</span><span class="ccv">4.5 °C</span></div></div>
-      <div class="flbl" style="padding:0 16px 5px;">Foto puerta precintada <span style="color:#cc4040;">*</span></div>
-      <div class="ph-box filled" style="margin:0 16px 10px;"><i class="ti ti-photo-check"></i><span>foto_gate_out_kdr482.jpg</span></div>
+      <div class="sync-pill"><i class="ti ti-checks"></i><span>Conductor completó el cargue a las 09:35</span></div>
+      <div class="slbl">Estado del conductor</div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Inspección del vehículo</div><div class="ss dn">06:28 ✓</div></div></div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Recogida de documentos</div><div class="ss dn">08:52 ✓</div></div></div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Inicio de carga</div><div class="ss dn">09:07 ✓</div></div></div>
+      <div class="sr" style="border-bottom:none;"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div></div><div class="sb"><div class="sn">Fin de carga</div><div class="ss dn">09:35 ✓</div></div></div>
+      <div class="div-line"></div>
+      <div style="padding:8px 16px 4px;">
+        <div class="flbl">Foto puerta precintada <span style="color:#cc4040;">*</span></div>
+        <div class="ph-box filled"><i class="ti ti-photo-check"></i><span>foto_gate_out_kdr482.jpg</span></div>
+      </div>
       <div style="flex:1;"></div>
       <div class="cta-z"><button class="btn b-teal" onclick="go('p-g5')"><i class="ti ti-door-exit"></i> Confirmar salida — gate-out</button></div>
     </div>
   </div>
 
-  <div id="p-g5" class="page">
-    <div class="sbar"><span class="sbar-t">09:37</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
-    <div class="topbar"><div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div><div class="tb-main"><div class="tb-title">Gate-out registrado</div></div><span class="role-tag rt-guard">Guardia</span></div>
+  <!-- G4b: Estado con alerta — conductor no completó -->
+  <div id="p-g4b" class="page">
+    <div class="sbar"><span class="sbar-t">09:36</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title" style="font-family:monospace;color:#20c0a0;letter-spacing:0.04em;">KDR-482</div><div class="tb-sub">Solicita salida — proceso incompleto</div></div>
+      <span class="role-tag rt-guard">Guardia</span>
+    </div>
     <div class="sbody">
-      <div class="succ">
-        <div class="sic guard"><i class="ti ti-door-exit"></i></div>
-        <div class="stit">Salida autorizada</div>
-        <div class="ssub">KDR-482 autorizado a salir del CEDI.<br>El conductor puede iniciar su ruta.</div>
-        <div class="tsb guard-ts">09:37 · gate-out registrado</div>
-      </div>
+      <div class="alert-pill"><i class="ti ti-alert-triangle"></i><span>El conductor no completó todos los pasos del pre-despacho. Decide si autoriza la salida.</span></div>
+      <div class="slbl">Estado del conductor</div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl dl"></div></div><div class="sb"><div class="sn">Inspección del vehículo</div><div class="ss dn">06:28 ✓</div></div></div>
+      <div class="sr"><div class="sc"><div class="sd sd-done"><i class="ti ti-check"></i></div><div class="sl"></div></div><div class="sb"><div class="sn">Recogida de documentos</div><div class="ss dn">08:52 ✓</div></div></div>
+      <div class="sr"><div class="sc"><div class="sd" style="background:#200a0a;color:#cc4040;border:1.5px solid #5a1a1a;font-size:10px;">!</div><div class="sl"></div></div><div class="sb"><div class="sn" style="color:#cc4040;">Inicio de carga</div><div class="ss" style="color:#7a3020;">Sin confirmar — sin conexión</div></div></div>
+      <div class="sr" style="border-bottom:none;"><div class="sc"><div class="sd" style="background:#200a0a;color:#cc4040;border:1.5px solid #5a1a1a;font-size:10px;">!</div></div><div class="sb"><div class="sn" style="color:#cc4040;">Fin de carga</div><div class="ss" style="color:#7a3020;">Sin confirmar — sin conexión</div></div></div>
       <div style="flex:1;"></div>
-      <div class="cta-z"><button class="btn b-teal" onclick="go('p-g1')">Volver a portería</button><button class="b-sec" onclick="go('p-select')">← Cambiar rol</button></div>
+      <div class="cta-z">
+        <button class="btn b-teal" onclick="go('p-g5')"><i class="ti ti-door-exit"></i> Autorizar salida de todas formas</button>
+        <button class="b-sec" onclick="go('p-g1')">Retener vehículo</button>
+      </div>
     </div>
   </div>
 
+  <!-- G5: Gate-out confirmado -->
+  <div id="p-g5" class="page">
+    <div class="sbar"><span class="sbar-t">09:37</span><div class="sbar-r"><i class="ti ti-wifi"></i><i class="ti ti-battery-2"></i></div></div>
+    <div class="topbar">
+      <div class="tb-back" onclick="go('p-g1')"><i class="ti ti-arrow-left"></i></div>
+      <div class="tb-main"><div class="tb-title">Gate-out registrado</div></div>
+      <span class="role-tag rt-guard">Guardia</span>
+    </div>
+    <div class="sbody">
+      <div class="succ">
+        <div class="sic guard-ic"><i class="ti ti-door-exit"></i></div>
+        <div class="stit">Salida autorizada</div>
+        <div class="ssub">KDR-482 autorizado a salir del CEDI.<br>Timestamp enviado al RNDC.</div>
+        <div class="tsb g">09:37 · gate-out · RNDC ✓</div>
+      </div>
+      <div style="flex:1;"></div>
+      <div class="cta-z">
+        <button class="btn b-teal" onclick="go('p-g1')"><i class="ti ti-building-warehouse"></i> Volver a portería</button>
+        <button class="b-sec" onclick="go('p-select')">← Cambiar rol</button>
+      </div>
+    </div>
   </div>
+
+  </div><!-- end screen -->
+</div><!-- end device -->
+
+<!-- nav hint -->
+<div style="margin-top:12px;font-size:10px;color:#252535;text-align:center;max-width:340px;line-height:1.6;">
+  Toca los botones para navegar · <span style="color:#303050;cursor:pointer;" onclick="go('p-g4c')">Ver estado esperando →</span> · <span style="color:#303050;cursor:pointer;" onclick="go('p-g4b')">Ver alerta sin conexión →</span>
 </div>
 
 <script>
 var cur='p-select';
-function go(id){document.getElementById(cur).classList.remove('active');document.getElementById(id).classList.add('active');cur=id;}
+function go(id){
+  document.getElementById(cur).classList.remove('active');
+  document.getElementById(id).classList.add('active');
+  cur=id;
+  if(id==='p-g3') setTimeout(startG3Countdown, 500);
+}
+
+function handlePlate(val){
+  var hint=document.getElementById('plate-hint');
+  var res=document.getElementById('plate-results');
+  var v=val.trim().toUpperCase();
+  if(v.length>=3){
+    hint.style.display='none';
+    res.style.display='block';
+  } else {
+    hint.style.display='block';
+    res.style.display='none';
+  }
+}
+
+function selectPlan(el,next){
+  document.querySelectorAll('.plan-item').forEach(function(p){p.classList.remove('sel');});
+  el.classList.add('sel');
+  setTimeout(function(){go(next);},200);
+}
+
 function tc(box,listId,btnId){
   var ck=box.classList.contains('ckd');
   if(ck){box.classList.remove('ckd');box.querySelector('i').style.display='none';box.parentElement.querySelector('.cht').classList.remove('dn');}
@@ -394,22 +701,33 @@ function tc(box,listId,btnId){
   if(done.length===all.length){btn.disabled=false;btn.classList.remove('b-dis');btn.classList.add('b-green');}
   else{btn.disabled=true;btn.classList.add('b-dis');btn.classList.remove('b-green');}
 }
+
+// G3 auto-countdown
+function startG3Countdown(){
+  var n=3;
+  var el=document.getElementById('g3-count');
+  if(!el) return;
+  var t=setInterval(function(){
+    n--;
+    if(n>0){el.textContent='Volviendo a portería en '+n+'...';}
+    else{clearInterval(t);go('p-g1');}
+  },1000);
+}
+
 function addP(el){
   var container=el.parentElement;
   var inp=document.createElement('input');
   inp.type='text';
   inp.placeholder='Código precinto...';
-  inp.style.cssText='background:#1a1a2e;border:1.5px solid #5050c0;border-radius:20px;font-size:11px;font-weight:600;color:#c0c0f0;padding:4px 10px;outline:none;width:150px;';
+  inp.style.cssText='background:#1a1a2e;border:1.5px solid #5050c0;border-radius:20px;font-size:11px;font-weight:600;color:#c0c0f0;padding:4px 10px;outline:none;width:150px;font-family:inherit;';
   inp.onkeydown=function(e){
     if(e.key==='Enter'&&inp.value.trim()!==''){
       var t=document.createElement('div');t.className='tag';
-      var code=inp.value.trim();
-      t.innerHTML=code+' <i class="ti ti-x" style="cursor:pointer;" onclick="this.parentElement.remove()"></i>';
+      t.innerHTML=inp.value.trim()+' <i class="ti ti-x" style="cursor:pointer;" onclick="this.parentElement.remove()"></i>';
       container.insertBefore(t,el);
-      inp.value='';
-      inp.focus();
+      inp.value='';inp.focus();
     }
-    if(e.key==='Escape'){inp.remove();}
+    if(e.key==='Escape')inp.remove();
   };
   inp.onblur=function(){setTimeout(function(){if(inp.value.trim()==='')inp.remove();},150);};
   container.insertBefore(inp,el);
